@@ -1,8 +1,66 @@
 #books {
 	width: 100%;
-	border: 5px solid black;
+	border: 5px solid rgb(22, 22, 22);
+	border-radius: 10px;
+}
+
+img {
+	box-shadow: 5px 2px 2px grey;
+	border: 1px solid grey;
+	border-left: 3px solid black;
+	border-radius: 5px;
+	margin-top: 10px;
 }
 
 ul {
 	list-style: none;
+}
+
+li {
+  background-color: grey;
+	border: 2px solid darkslategrey;
+}
+
+h3 {
+	text-shadow: 1px 1px black;
+}
+
+p {
+	padding: 15px;
+	color: honeydew;
+}
+
+@media (max-width: 678px){
+
+	ul {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+	}
+
+	li {
+		margin: 15px 0px 15px 0px;
+		padding: 10px;
+		width: 90%;
+		border-radius: 5px;
+		box-shadow: 2px 2px 9px 6px rgba(100, 100, 100,1);
+	}
+
+}
+
+@media (min-width: 679px){
+
+	ul {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+	}
+
+	li {
+		width: 20%;
+		box-sizing: border-box;
+		max-height: 600px;
+		overflow: auto;
+	}
+
 }
