@@ -1,0 +1,26 @@
+{
+  "name": "google-books-api",
+  "version": "1.0.0",
+  "description": "Lab 11",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^2.6.1",
+    "express": "^4.16.3",
+    "superagent": "^4.0.0-beta.5"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Zscoob/lab-11.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Zscoob/lab-11/issues"
+  },
+  "homepage": "https://github.com/Zscoob/lab-11#readme"
+}
