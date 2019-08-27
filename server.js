@@ -10,14 +10,14 @@ const PORT = process.env.PORT || 3000;
 
 // Application Middleware
 app.use(express.urlencoded({extended:true}));
-app.use(express.static('public'));
+app.use(express.static('./public'));
 
 // Set the view engine for server-side templating
 app.set('view engine', 'ejs');
 
 // API Routes
 // Renders the search form
-app.get('/', (req, res) => { 
+app.get('/', (request, response) => { 
   // Note that .ejs file extension is not required
   response.render('pages/index');
 });
@@ -46,7 +46,10 @@ function createSearch(request, response) {
   if (request.body.search[1] === 'author') { url += `+inauthor:${request.body.search[0]}`; }
 
   superagent.get(url)
-    .then(apiResponse => apiResponse.body.items.map(bookResult => new Book(bookResult.volumeInfo)))
+    .then(apiResponse => apiResponse.body.items.map(bookResult => {
+      console.log(bookResult)
+      return new Book(bookResult.volumeInfo)
+    }))
     .then(results => response.render('pages/searches/show', {searchResults: results}));
   // how will we handle errors?
 }
