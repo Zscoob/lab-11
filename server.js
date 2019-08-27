@@ -32,7 +32,10 @@ app.listen(PORT, () => console.log(`Listening on port: ${PORT}`));
 
 // HELPER FUNCTIONS
 function Book(info) {
-  //Finish this constructor function
+  this.author = info.authors;
+  this.title = info.title;
+  this.description = info.description;
+  this.image_url = info.imageLinks.thumbnail;
 }
 
 // No API key required
