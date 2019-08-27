@@ -31,14 +31,15 @@ app.get('*', (request, response) => response.status(404).send('This route does n
 app.listen(PORT, () => console.log(`Listening on port: ${PORT}`));
 
 const placeholderImage = 'https://i.imgur.com/J5LVHEL.jpg';
-let httpRegex = /^(http:\/\/)/g;
+let httpRegex = /^(http:)/g;
 
 // HELPER FUNCTIONS
 function Book(info) {
+  this.isbn = `${info.industryIdentifiers[0].identifier}`;
   this.author = info.authors;
   this.title = info.title;
   this.description = info.description;
-  this.image_url = info.imageLinks ? info.imageLinks.smallThumbnail.replace(httpRegex, 'https://') : placeholderImage;
+  this.image_url = info.imageLinks ? info.imageLinks.smallThumbnail.replace(httpRegex, 'https:') : placeholderImage;
 }
 
 // No API key required
