@@ -30,6 +30,14 @@ p {
 	color: honeydew;
 }
 
+#error h1 {
+	font-size: 3em;
+}
+
+#error p {
+	font-size: 1em;
+}
+
 @media (max-width: 678px){
 
 	ul {

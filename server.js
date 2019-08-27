@@ -56,6 +56,9 @@ function createSearch(request, response) {
       console.log(bookResult)
       return new Book(bookResult.volumeInfo)
     }))
-    .then(results => response.render('pages/searches/show', {searchResults: results}));
+    .then(results => response.render('pages/searches/show', {searchResults: results}))
+    .catch(error => {
+      response.render('pages/error')
+    })
   // how will we handle errors?
 }
