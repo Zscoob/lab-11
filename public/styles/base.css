@@ -18,3 +18,8 @@ form {
 button{
 	background-color: aqua;
 }
+
+#error {
+  color: red;
+  font-size: 40px;
+}
