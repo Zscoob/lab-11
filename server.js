@@ -38,6 +38,12 @@ function Book(info) {
   this.image_url = info.imageLinks.thumbnail;
 }
 
+Book.prototype.default = () => {
+  if(!bookResult){
+    return `Sorry, we didn't find anything by that name.`
+  }
+}
+
 // No API key required
 function createSearch(request, response) {
   let url = 'https://www.googleapis.com/books/v1/volumes?q=';
