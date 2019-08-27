@@ -2,12 +2,13 @@ html {
 	height: 100%;
 }
 body {
+  font-size: 20px;
   background-color: darkgray;
 	position: relative;
 	text-align: center;
-	font-family: 'Arial Narrow', sans-serif;
 	font-size: 16px;
-	color: white;
+  color: white;
+  font-family: 'Merriweather', serif;
 }
 form {
 	background-color: firebrick;

@@ -22,12 +22,18 @@ li {
 }
 
 h3 {
+	font-size: 1.3rem;
 	text-shadow: 1px 1px black;
+	font-family: 'Hepta Slab', serif;
+	line-height: 1.2;
 }
 
 p {
 	padding: 15px;
 	color: honeydew;
+	letter-spacing: 1px;
+	line-height: 1.2;
+	text-align: left;
 }
 
 #error h1 {
