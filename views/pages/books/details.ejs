@@ -1,12 +1,20 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<title>Document</title>
-</head>
-<body>
-	
-</body>
-</html>
+<section class="book-container detail-view">
+	<img src="<%= book.image_url %>">
+	<h3>
+		<%= book.title %><% if(book.subtitle){%>: <%= book.subtitle %> <% } %.
+	</h3>
+	<span>
+		<%= book.author %>
+	</span>
+	<p class="desc">
+		<%= book.description %>
+	</p>
+	<p class="isbn">
+		<%= book.isbn %>
+		<% if(book.bookshelf){ %>
+			&mdash;
+			Bookshelf:
+			<%= book.bookshelf %>
+		<% } %>
+	</p>
+</section>

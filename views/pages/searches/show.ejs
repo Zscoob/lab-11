@@ -12,17 +12,28 @@
   <title>Results</title>
 </head>
 <body>
-  <div id="books">
-    <ul>
-      <% searchResults.forEach((book) => {%>
-        <li data-book-id="<% book.isbn %>">
-          <img src=<%= book.image_url %>>
-          <h3> <%= book.title %> </h3>
-          <h5> <%= book.author %> </h5>
-          <p> <%= book.description %> </p>
+  <%- include('../../layout/header') %>
+  <main>
+    <h4>Search Results</h4>
+    <ul class="search-results">
+      <% results.forEach(book => { %>
+        <li data-book-id="<%= book.isbn %>">
+          <%- include('../books/detail', {book: book}) %>
+          <button class="select-button">Select This Book</button>
+          <form class="hide-me" action="/books" method="post">
+            <input type="text" name="title" value="<%= book.title %>" required>
+            <input type="text" name="author" value="<%= book.author %>" required>
+            <input type="text" name="isbn" value="<%= book.isbn %>" required>
+            <input type="text" name="image_url" value="<%= book.image_url %>" required>
+            <textarea name="description" value="<%= book.description %>" cols="30" rows="5"><%= book.description %></textarea>
+            <p>Enter a bookshelf name</p>
+            <input type="text" name="bookshelf" required>
+            <button id="show-me" type="submit">Add to Database</button>
+          </form>
         </li>
-      <% }); %>
+      <% }) %>
     </ul>
-  </div>
+  </main>
+  <%- include('../../layout/footer') %>
 </body>
 </html>

@@ -1,12 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<title>Document</title>
-</head>
-<body>
-	
-</body>
+	<head>
+			<meta charset="UTF-8">
+			<meta name="viewport" content="width=device-width, initial-scale=1.0">
+			<meta http-equiv="X-UA-Compatible" content="ie=edge">
+			<link rel="stylesheet" href="styles/reset.css">
+			<link rel="stylesheet" href="styles/base.css">
+			<link rel="stylesheet" href="styles/modules.css">
+			<link rel="stylesheet" href="styles/icons.css">
+			<link href="https://fonts.googleapis.com/css?family=Hepta+Slab%7CMerriweather&display=swap" rel="stylesheet">
+			<title>Results</title>
+	</head>
+	<body>
+		<%- include('../../layout/header') %>
+		<main>
+			<h4 class="view-title">Search by Title or Author</h4>
+			<form id="create-form" action="/searches" method="post">
+				<input type="text" name="search" placeholder="Enter a title or author" required>
+				<fieldset>
+					<label for="title">
+						<span>Title</span>
+						<input type="radio" id="title" name="search" value="title" required>
+					</label>
+				</fieldset>
+				<fieldset>
+					<label for="author">
+						<span>Author</span>
+						<input type="radio" id="author" name="search" value="author" required>
+					</label>
+				</fieldset>
+				<button class="lng-btn" type="submit">Search the Google Books API</button>
+			</form>
+			<%- inclue('../../layout/footer') %>
+		</main>
+	</body>
 </html>
