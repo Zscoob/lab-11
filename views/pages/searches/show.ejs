@@ -15,7 +15,7 @@
   <div id="books">
     <ul>
       <% searchResults.forEach((book) => {%>
-        <li>
+        <li data-book-id="<% book.isbn %>">
           <img src=<%= book.image_url %>>
           <h3> <%= book.title %> </h3>
           <h5> <%= book.author %> </h5>
