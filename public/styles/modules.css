@@ -10,6 +10,8 @@ img {
 	border-left: 3px solid black;
 	border-radius: 5px;
 	margin-top: 10px;
+	height: 200px;
+	width: auto;
 }
 
 ul {
@@ -34,6 +36,12 @@ p {
 	letter-spacing: 1px;
 	line-height: 1.2;
 	text-align: left;
+	max-height: 300px;
+	overflow: auto;
+}
+
+button:hover {
+	background-color: rgb(0, 204, 204);
 }
 
 #error h1 {
@@ -73,8 +81,6 @@ p {
 	li {
 		width: 20%;
 		box-sizing: border-box;
-		max-height: 600px;
-		overflow: auto;
 	}
 
 }

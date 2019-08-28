@@ -22,14 +22,14 @@ app.get('*', (request, response) => response.status(404).send('This route does n
 app.listen(PORT, () => console.log(`Listening on port: ${PORT}`));
 
 const placeholderImage = 'https://i.imgur.com/J5LVHEL.jpg';
-let httpRegex = /^(http:\/\/)/g;
+let httpRegex = /^(http:)/g;
 
 function Book(info) {
   this.author = info.volumeInfo.authors;
   this.title = info.volumeInfo.title;
   this.description = info.volumeInfo.description;
   this.image_url = info.volumeInfo.imageLinks ? info.volumeInfo.imageLinks.smallThumbnail.replace(httpRegex, 'https://') : placeholderImage;
-  this.isbn = info.volumeInfo.industryIdentifiers[0].identifier;
+  this.isbn = `ISBN_13 ${info.volumeInfo.industryIdentifiers[0].identifier}`;
   this.bookshelf = userInputOfSomeSort;
 }
 

@@ -1,6 +1,7 @@
 html {
 	height: 100%;
 }
+
 body {
   font-size: 20px;
   background-color: darkgray;
@@ -10,14 +11,20 @@ body {
   color: white;
   font-family: 'Merriweather', serif;
 }
+
 form {
 	background-color: firebrick;
 	color: black;
 	border: 10px solid black;
 	border-radius: 25px;
+	padding: 30px;
 }
+
 button{
 	background-color: aqua;
+	padding: 5px;
+	border-radius: 3px;
+	border: outset;
 }
 
 #error {
