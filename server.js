@@ -1,31 +1,22 @@
 'use strict';
 
-// Application Dependencies
 const express = require('express');
 const superagent = require('superagent');
 
-// Application Setup
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-// Application Middleware
 app.use(express.urlencoded({extended:true}));
 app.use(express.static('./public'));
 
-// Set the view engine for server-side templating
 app.set('view engine', 'ejs');
 
-// API Routes
-// Renders the search form
 app.get('/', (request, response) => { 
-  // Note that .ejs file extension is not required
   response.render('pages/index');
 });
 
-// Creates a new search to the Google Books API
 app.post('/searches', createSearch);
 
-// Catch-all
 app.get('*', (request, response) => response.status(404).send('This route does not exist'));
 
 app.listen(PORT, () => console.log(`Listening on port: ${PORT}`));
@@ -33,17 +24,22 @@ app.listen(PORT, () => console.log(`Listening on port: ${PORT}`));
 const placeholderImage = 'https://i.imgur.com/J5LVHEL.jpg';
 let httpRegex = /^(http:)/g;
 
-// HELPER FUNCTIONS
 function Book(info) {
-  this.isbn = `${info.industryIdentifiers[0].identifier}`;
-  this.author = info.authors;
-  this.title = info.title;
-  this.description = info.description;
-  this.image_url = info.imageLinks ? info.imageLinks.smallThumbnail.replace(httpRegex, 'https:') : placeholderImage;
+  this.author = info.volumeInfo.authors;
+  this.title = info.volumeInfo.title;
+  this.description = info.volumeInfo.description;
+  this.image_url = info.volumeInfo.imageLinks ? info.volumeInfo.imageLinks.smallThumbnail.replace(httpRegex, 'https://') : placeholderImage;
+  this.isbn = `ISBN_13 ${info.volumeInfo.industryIdentifiers[0].identifier}`;
+  this.bookshelf = userInputOfSomeSort;
 }
 
-// No API key required
-function createSearch(request, response) {
+Book.prototype.save = function(){
+  const SQL = `INSERT INTO books (author, title, isbn, image_url, description, bookshelf) VALUES($1, $2, $3, $4, $5, $6);`;
+  const VALUES = [this.id, this.author, this.title, this.isbn, this.image_url, this.description, this.bookshelf];
+  client.query(SQL, VALUES);
+}
+
+function createSearch(request, response){
   let url = 'https://www.googleapis.com/books/v1/volumes?q=';
 
   console.log(request.body);
@@ -55,11 +51,10 @@ function createSearch(request, response) {
   superagent.get(url)
     .then(apiResponse => apiResponse.body.items.map(bookResult => {
       console.log(bookResult)
-      return new Book(bookResult.volumeInfo)
+      return new Book(bookResult)
     }))
     .then(results => response.render('pages/searches/show', {searchResults: results}))
     .catch(error => {
       response.render('pages/error')
     })
-  // how will we handle errors?
 }
