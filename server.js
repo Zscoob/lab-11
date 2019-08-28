@@ -18,10 +18,6 @@ app.use(express.static('./public'));
 
 app.set('view engine', 'ejs');
 
-app.get('/', (request, response) => { 
-  response.render('pages/index');
-});
-
 app.get('/', getBooks);
 app.post('/searches', createSearch);
 app.get('/searches/new', newSearch);
