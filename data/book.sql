@@ -1,14 +1,16 @@
 DROP TABLE IF EXISTS books
 
-CREATE TABLE books (
+CREATE TABLE IF NOT EXISTS books (
   id SERIAL PRIMARY KEY,
   author VARCHAR(255),
   title VARCHAR(255),
 	isbn VARCHAR(255),
 	image_url VARCHAR(255),
-  description VAR(1000),
+  description TEXT,
   bookshelf VAR(255)
 );
+
+INSERT INTO books(id, author, title, isbn, image_url, description, bookshelf);
 
 
 
