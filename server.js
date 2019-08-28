@@ -2,6 +2,7 @@
 
 const express = require('express');
 const superagent = require('superagent');
+require('dotenv');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -16,12 +17,11 @@ app.get('/', (request, response) => {
 });
 
 app.post('/searches', createSearch);
-
 app.get('*', (request, response) => response.status(404).send('This route does not exist'));
 
 app.listen(PORT, () => console.log(`Listening on port: ${PORT}`));
 
-const placeholderImage = 'https://i.imgur.com/J5LVHEL.jpg';
+const placeholderImage = 'https://i.imgur.com/J5LVHEL.jpg'; 
 let httpRegex = /^(http:)/g;
 
 function Book(info) {
@@ -31,13 +31,13 @@ function Book(info) {
   this.image_url = info.volumeInfo.imageLinks ? info.volumeInfo.imageLinks.smallThumbnail.replace(httpRegex, 'https://') : placeholderImage;
   this.isbn = `ISBN_13 ${info.volumeInfo.industryIdentifiers[0].identifier}`;
   this.bookshelf = userInputOfSomeSort;
-}
+};
 
 Book.prototype.save = function(){
   const SQL = `INSERT INTO books (author, title, isbn, image_url, description, bookshelf) VALUES($1, $2, $3, $4, $5, $6);`;
   const VALUES = [this.id, this.author, this.title, this.isbn, this.image_url, this.description, this.bookshelf];
   client.query(SQL, VALUES);
-}
+};
 
 function createSearch(request, response){
   let url = 'https://www.googleapis.com/books/v1/volumes?q=';
