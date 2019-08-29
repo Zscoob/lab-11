@@ -2,8 +2,8 @@
 
 console.log("it's working");
 
-$('.hide-me').hide();
+$(`.hide-me`).hide();
 
-$('.select-button').click(
-  $('.hide-me').show()
-);
+$(`.select-button`).click(function () {
+  $(`.hide-me`).show()
+});
