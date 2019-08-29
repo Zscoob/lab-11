@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="styles/modules.css">
     <link rel="stylesheet" href="styles/icons.css">
     <link href=“https://fonts.googleapis.com/css?family=Hepta+Slab%7CMerriweather&display=swap” rel=“stylesheet”>
+		<link rel="stylesheet" href="styles/home.css">
     <title>Book Collection</title>
   </head>
   <body>
@@ -13,14 +14,17 @@
     <main>
       <h4>Saved Books</h4>
       <p><%= books.length %> books in the Collection</p>
-      <ul id="book-list">
+      
+			<ul id="book-list">
         <% books.forEach(book => { %>
-          <li class="book-items" data-book-id="<%= book.id %>">
+				  <li class="book-items" data-book-id="<%= book.id %>">
             <%- include('books/details', {book: book}) %>
-            <p class="detail-button"><a href="/books/<%= book.id %>">View Details</a></p>
+            <a href="/books/<%= book.id %>" class="detail-button">View Details</a>
           </li>
         <% }) %>
       </ul>
+
+
     </main>
     <%- include('../layout/footer') %>
   </body>
