@@ -51,36 +51,3 @@ button:hover {
 #error p {
 	font-size: 1em;
 }
-
-@media (max-width: 678px){
-
-	ul {
-		display: flex;
-		flex-wrap: wrap;
-		justify-content: center;
-	}
-
-	li {
-		margin: 15px 0px 15px 0px;
-		padding: 10px;
-		width: 90%;
-		border-radius: 5px;
-		box-shadow: 2px 2px 9px 6px rgba(100, 100, 100,1);
-	}
-
-}
-
-@media (min-width: 679px){
-
-	ul {
-		display: flex;
-		flex-wrap: wrap;
-		justify-content: center;
-	}
-
-	li {
-		width: 20%;
-		box-sizing: border-box;
-	}
-
-}

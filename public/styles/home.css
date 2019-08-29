@@ -33,10 +33,8 @@ main{
 	flex-wrap: wrap;
 	justify-content: center;
 	width: 90%;
-	height: 65%;
 	position: absolute;
   border: 5px solid burlywood;
-  padding: 50px;
   margin: 20px;
 	background-color: blanchedalmond;
 	color: brown;
@@ -56,24 +54,27 @@ h4 {
 #book-list{
 	display: inline-block;
 	width: 100%;
-	height: 100%;
+	height: 90%;
 	border: 5px solid black;
-	overflow: auto;
+	background-color: lightgrey;
+	border-radius: 25px;
 }
+
 p{
 	color: black;
 }
+
 .book-items{
 	display: flex;
 	justify-content: center;
-	width: 100%;
-	height: 100%;
+	width: 98%;
+	height: 500px;
+	margin: 1%;
 	overflow: auto;
+	border-radius: 15px;
 }
+
 .detail-button{
 	position: relative;
-  
-  
- /*border: 3px solid #8AC007; */
 }
 
