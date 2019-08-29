@@ -35,7 +35,7 @@ function Book(info) {
   this.author = info.authors;
   this.title = info.title;
   this.description = info.description;
-  this.image_url = info.imageLinks ? info.imageLinks.smallThumbnail.replace(httpRegex, 'https://') : placeholderImage;
+  this.image_url = info.imageLinks ? info.imageLinks.smallThumbnail.replace(httpRegex, 'https:') : placeholderImage;
   this.isbn = `ISBN_13 ${info.industryIdentifiers[0].identifier}`;
 };
 
