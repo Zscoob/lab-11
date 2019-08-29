@@ -5,15 +5,14 @@
     <link rel="stylesheet" href="styles/base.css">
     <link rel="stylesheet" href="styles/modules.css">
     <link rel="stylesheet" href="styles/icons.css">
-    <link href=“https://fonts.googleapis.com/css?family=Hepta+Slab%7CMerriweather&display=swap” rel=“stylesheet”>
+    <link href="https://fonts.googleapis.com/css?family=Hepta+Slab%7CMerriweather&display=swap" rel="stylesheet">
 		<link rel="stylesheet" href="styles/home.css">
-    <title>Book Collection</title>
   </head>
   <body>
     <%- include('../layout/header') %>
     <main>
       <h4>Saved Books</h4>
-      <p><%= books.length %> books in the Collection</p>
+      <p id="collection"><%= books.length %> books in the Collection</p>
       
 			<ul id="book-list">
         <% books.forEach(book => { %>
