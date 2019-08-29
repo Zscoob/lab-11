@@ -40,10 +40,13 @@ main{
 	color: brown;
 	margin-left: 5%;
 	margin-right: 5%;
+	box-sizing: border-box;
 }
 
 h4 {
 	width: 100%;
+	font-size: 2rem;
+	margin: 5px;
 }
 
 #collection {
@@ -53,7 +56,7 @@ h4 {
 
 #book-list{
 	display: inline-block;
-	width: 100%;
+	width: 90%;
 	height: 90%;
 	border: 5px solid black;
 	background-color: lightgrey;
