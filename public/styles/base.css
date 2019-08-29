@@ -12,6 +12,15 @@ body {
   font-family: 'Merriweather', serif;
 }
 
+a {
+	text-decoration: none;
+	color: white;
+}
+
+a:hover {
+	color: lightgrey;
+}
+
 form {
 	background-color: firebrick;
 	color: black;
