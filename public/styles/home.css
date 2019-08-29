@@ -1,0 +1,67 @@
+
+body {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  position: relative;
+}
+
+body::after {
+  content: "";
+  background: url(/images/library.jpg);
+	background-size: contain;
+  opacity: 0.3;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;   
+}
+
+header {
+	display: inline-block;
+	justify-content: center;
+	width: 100%;
+	text-align: center;
+	padding: 25px;
+	margin: 25px;
+}
+
+main{
+	display: flex;
+	justify-content: center;
+	width: 100%;
+	height: 65%;
+	position: absolute;
+  border: 5px solid burlywood;
+  padding: 50px;
+  margin: 20px;
+	background-color: blanchedalmond;
+	color: brown;
+	margin-left: 25px;
+	margin-right: 25px;
+}
+#book-list{
+	display: inline-block;
+	width: 50%;
+	height: 100%;
+	border: 5px solid black;
+}
+p{
+	color: black;
+}
+.book-items{
+	display: flex;
+	justify-content: center;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+}
+.detail-button{
+	position: relative;
+  
+  
+ /*border: 3px solid #8AC007; */
+}
+

@@ -40,7 +40,7 @@ function Book(info) {
 };
 
 function getBooks(request, response){
-  let SQL = `SELECT * FROM books;`;
+  let SQL = `SELECT * FROM books`;
 
   return client.query(SQL)
     .then(results => {
@@ -51,9 +51,9 @@ function getBooks(request, response){
       }
     })
     .catch(error => {
-      response.render('pages/error')
-      console.log(error)
-    })
+      response.render('pages/error');
+      console.log(error);
+    });
 }
 
 function createSearch(request, response){
