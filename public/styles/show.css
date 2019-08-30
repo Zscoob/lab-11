@@ -19,7 +19,7 @@ header {
   position: fixed;
   top: 150px;
   left: 0;
-	display: flex;
+  display: flex;
 	flex-wrap: wrap;
 	justify-content: center;
 	width: 90%;
