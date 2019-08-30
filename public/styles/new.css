@@ -1,13 +1,63 @@
-main {
-	background-color: aqua;
+html {
+  font-size: 20px;
+  background-color: darkgray;
+  width: 100%;
+  height: 100%;
+  display: flex;
+	position: relative;
 	text-align: center;
-	
+	font-size: 16px;
+  color: white;
+  font-family: 'Merriweather', serif;
+}
+h1{
+	text-align: center;
+}
+
+body::after {
+	content: "";
+  background: url(/images/library.jpg);
+	background-size: contain;
+  opacity: 0.3;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;  
 }
 header {
-	background-color: aquamarine;
-	display: flex;
-	justify-content: center;
+	width: 100%;
+	align-items: center;
+	text-align: center;
+	margin: 0 auto;
+	position: absolute;
+	border: 5px solid burlywood;
+	background-color: blanchedalmond;
 }
+main {
+	display: inline-block;
+	justify-content: baseline;
+	align-items: center;
+	width: 90%;
+	position: absolute;
+  border: 5px solid burlywood;
+	background-color: blanchedalmond;
+	color: grey;
+	margin: 150px 5% 0px 5%;
+	box-sizing: border-box;
+}
+h4{
+	margin: 10px auto;
+}
+
 ul{
 	list-style: none;
 }
+fieldset{
+	width: 100%;
+	display: inline-block;
+	float: left;
+	margin: 15px auto;
+}
+
