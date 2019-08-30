@@ -1,24 +1,3 @@
-
-body {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  position: relative;
-}
-
-body::after {
-  content: "";
-  background: url(/images/library.jpg);
-	background-size: contain;
-  opacity: 0.3;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  position: absolute;
-  z-index: -1;   
-}
-
 header {
 	display: inline-block;
 	justify-content: center;
@@ -26,6 +5,7 @@ header {
 	text-align: center;
 	padding: 25px;
 	margin: 25px;
+	margin-left:50px;
 }
 
 main{
@@ -35,18 +15,27 @@ main{
 	width: 90%;
 	position: absolute;
   border: 5px solid burlywood;
-  margin: 20px;
 	background-color: blanchedalmond;
-	color: brown;
-	margin-left: 5%;
-	margin-right: 5%;
+	color: grey;
+	margin: 150px 5% 0px 5%;
 	box-sizing: border-box;
+}
+
+h1 {
+	font-size: 2rem;
 }
 
 h4 {
 	width: 100%;
 	font-size: 2rem;
 	margin: 5px;
+}
+
+li {
+	display: inline-block;
+	padding: 3px;
+	border: none;
+	background: 0%;
 }
 
 #collection {
@@ -70,14 +59,20 @@ p{
 .book-items{
 	display: flex;
 	justify-content: center;
-	width: 98%;
-	height: 500px;
-	margin: 1%;
-	overflow: auto;
+	width: 90%;
+	margin: 20px auto;
 	border-radius: 15px;
 }
 
 .detail-button{
 	position: relative;
+	bottom: 10px;
 }
 
+h3 {
+	margin: 5px;
+}
+
+span {
+	display: block;
+}
