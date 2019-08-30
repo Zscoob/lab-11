@@ -10,8 +10,17 @@ html {
   color: white;
   font-family: 'Merriweather', serif;
 }
+
 h1{
 	text-align: center;
+	font-size: 2rem;
+}
+
+li {
+	display: inline-block;
+	padding: 3px;
+	border: none;
+	background: 0%;
 }
 
 body::after {
@@ -26,27 +35,43 @@ body::after {
   position: absolute;
   z-index: -1;  
 }
+
 header {
+	display: inline-block;
+	justify-content: center;
 	width: 100%;
-	align-items: center;
 	text-align: center;
-	margin: 0 auto;
-	position: absolute;
-	border: 5px solid burlywood;
-	background-color: blanchedalmond;
+	padding: 25px;
+	margin: 25px;
+  margin-left:50px;
+  height: 0;
 }
+
 main {
 	display: inline-block;
 	justify-content: baseline;
 	align-items: center;
 	width: 90%;
-	position: absolute;
+	position: fixed;
+	top: 150px;
+	left: 0;
   border: 5px solid burlywood;
 	background-color: blanchedalmond;
 	color: grey;
-	margin: 150px 5% 0px 5%;
+	margin: 0px 5% 0px 5%;
 	box-sizing: border-box;
+	border-radius: 10px;
 }
+
+a {
+	text-decoration: none;
+	color: white;
+}
+
+a:hover {
+	color: black;
+}
+
 h4{
 	margin: 10px auto;
 }
@@ -54,13 +79,16 @@ h4{
 ul{
 	list-style: none;
 }
+
 fieldset{
 	width: 100%;
-	display: inline-block;
 	float: left;
 	margin: 15px auto;
 }
 
-
-
-
+input, button {
+	padding: 3px;
+	border-radius: 3px;
+	border: solid grey 1px;
+	font-family: 'Merriweather', serif;
+}

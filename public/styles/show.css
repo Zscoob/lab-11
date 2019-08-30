@@ -16,7 +16,10 @@ header {
 }
 
 .detail-view {
-	display: flex;
+  position: fixed;
+  top: 150px;
+  left: 0;
+  display: flex;
 	flex-wrap: wrap;
 	justify-content: center;
 	width: 90%;
