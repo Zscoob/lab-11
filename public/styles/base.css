@@ -3,6 +3,26 @@ html {
 }
 
 body {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  position: relative;
+}
+
+body::after {
+  content: "";
+  background: url(/images/library.jpg);
+	background-size: contain;
+  opacity: 0.3;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;   
+}
+
+body {
   font-size: 20px;
   background-color: darkgray;
 	position: relative;
@@ -18,7 +38,7 @@ a {
 }
 
 a:hover {
-	color: lightgrey;
+	color: black;
 }
 
 form {

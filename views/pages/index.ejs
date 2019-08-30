@@ -1,29 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <link rel="stylesheet" href="styles/reset.css">
-    <link rel="stylesheet" href="styles/base.css">
-    <link rel="stylesheet" href="styles/modules.css">
-    <link rel="stylesheet" href="styles/icons.css">
-    <link href="https://fonts.googleapis.com/css?family=Hepta+Slab%7CMerriweather&display=swap" rel="stylesheet">
-		<link rel="stylesheet" href="styles/home.css">
-  </head>
-  <body>
-    <%- include('../layout/header') %>
-    <main>
-      <h4>Saved Books</h4>
-      <p id="collection"><%= books.length %> books in the Collection</p>
-      
-			<ul id="book-list">
-        <% books.forEach(book => { %>
-				  <li class="book-items" data-book-id="<%= book.id %>">
-            <%- include('books/details', {book: book}) %>
-          </li>
-        <% }) %>
-      </ul>
+<head>
+  <link rel="stylesheet" href="styles/reset.css">
+  <link rel="stylesheet" href="styles/base.css">
+  <link rel="stylesheet" href="styles/modules.css">
+  <link rel="stylesheet" href="styles/icons.css">
+  <link href="https://fonts.googleapis.com/css?family=Hepta+Slab%7CMerriweather&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/home.css">
+</head>
+
+<body>
+  <%- include('../layout/header') %>
+  <main>
+    <h4>Saved Books</h4>
+    <p id="collection"><%= books.length %> books in the Collection</p>
+
+    <ul id="book-list">
+      <% books.forEach(book => { %>
+      <li class="book-items" data-book-id="<%= book.id %>">
+        <section class="book-container detail-view">
+          <img src="<%= book.image_url %>">
+          <h3>
+            <%= book.title %><% if(book.subtitle){%>: <%= book.subtitle %> <% } %>
+          </h3>
+          <span>
+            <%= book.author %>
+          </span></br>
+          <a href="/books/<%= book.id %>" class="detail-button">View Details</a>
+        </section>
+      </li>
+      <% }) %>
+    </ul>
 
 
-    </main>
-    <%- include('../layout/footer') %>
-  </body>
+  </main>
+  <%- include('../layout/footer') %>
+</body>
+
 </html>
