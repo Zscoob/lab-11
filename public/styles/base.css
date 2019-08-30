@@ -1,18 +1,6 @@
 html {
 	height: 100%;
 }
-body::after {
-  content: "";
-  background: url(/images/library.jpg);
-	background-size: contain;
-  opacity: 0.3;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  position: absolute;
-  z-index: -1;   
-}
 
 body {
   font-size: 20px;
@@ -25,6 +13,19 @@ body {
 	font-size: 16px;
   color: white;
   font-family: 'Merriweather', serif;
+}
+
+body::after {
+  content: "";
+  background: url(/images/library.jpg);
+	background-size: contain;
+  opacity: 0.3;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;   
 }
 
 a {
