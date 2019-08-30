@@ -1,3 +1,4 @@
+
 <section class="book-container detail-view">
 	<img src="<%= book.image_url %>">
 	<h3>
@@ -9,10 +10,11 @@
 	<p class="desc">
 		<%= book.description %>
 	</p>
-	<p class="isbn">
+	<p class="isbn"><span id="isbnhide">
 		<%= book.isbn %>
 		<% if(book.bookshelf){ %>
 			&mdash;
+		</span>
 			Bookshelf:
 			<%= book.bookshelf %>
 		<% } %>
