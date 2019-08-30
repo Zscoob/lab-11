@@ -16,6 +16,9 @@ header {
 }
 
 .detail-view {
+  position: fixed;
+  top: 150px;
+  left: 0;
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: center;
