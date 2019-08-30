@@ -1,6 +1,13 @@
 body{
 	background-color: aqua;
 }
+
 header {
-	background-color: aquamarine;
+	width: 100%;
+	align-items: center;
+	text-align: center;
+	margin: 0 auto;
+	position: absolute;
+	border: 5px solid burlywood;
+	background-color: blanchedalmond;
 }

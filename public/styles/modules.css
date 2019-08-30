@@ -1,4 +1,15 @@
+header {
+	display: inline-block;
+	justify-content: center;
+	width: 100%;
+	text-align: center;
+	padding: 25px;
+	margin: 25px;
+	margin-left:50px;
+}
+
 #books {
+	display: block;
 	width: 100%;
 	border: 5px solid rgb(22, 22, 22);
 	border-radius: 10px;
@@ -51,3 +62,4 @@ button:hover {
 #error p {
 	font-size: 1em;
 }
+
