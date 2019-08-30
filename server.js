@@ -67,14 +67,14 @@ function createSearch(request, response){
   
   superagent.get(url)
     .then(apiResponse => apiResponse.body.items.map(bookResult => {
-      console.log(bookResult)
-      return new Book(bookResult.volumeInfo)
+      console.log(bookResult);
+      return new Book(bookResult.volumeInfo);
     }))
     .then(results => response.render('pages/searches/show', {searchResults: results}))
     .catch(error => {
-      response.render('pages/error')
-      console.log(error)
-    })
+      response.render('pages/error');
+      console.log(error);
+    });
 }
 
 function newSearch(request, response){
@@ -95,10 +95,10 @@ function createBook(request, response){
       return client.query(SQL, VALUES)
         .then(result => response.redirect(`/books/${result.rows[0].id}`))
         .catch(error => {
-          response.render('pages/error')
-          console.log(error)
-        })
-    })
+          response.render('pages/error');
+          console.log(error);
+        });
+    });
 }
 
 function getBook(request, response) {
@@ -109,10 +109,10 @@ function getBook(request, response) {
       client.query(SQL, VALUES)
         .then(result => response.render('pages/books/show', {book: result.rows[0], bookshelves: shelves.rows}))
         .catch(error => {
-          response.render('pages/error')
-          console.log(error)
-        })
-    })
+          response.render('pages/error');
+          console.log(error);
+        });
+    });
 }
 
 function getBookshelves(){
